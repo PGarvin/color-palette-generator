@@ -4,7 +4,7 @@
     margin: 1em auto;
     text-align: center;
     text-decoration: none;
-    font-size: 12px;
+    font-size: 1em;
     text-transform: uppercase;
     font-family: Helvetica, sans-serif;
     width: 100%;
@@ -19,7 +19,7 @@
 
 #recipes {
     font-family: Helvetica, sans-serif;
-    font-size:0.9em;
+    font-size:1em;
     line-height:1.6em;
 	width:90%;
 	text-align:center;
@@ -27,9 +27,15 @@
 	margin:10px 5%;
 }
 
-.hide {
-    width: 1px;
-    opacity: 0.1;
+select {
+	margin:10px auto;
+	display:block;
+	width:60%;
+	max-width:400px;
+	font-size: 1em;
+	font-family: Helvetica, sans-serif;
+	line-height: 1.4em;
+    background:#fff;
 }
 
 .main {

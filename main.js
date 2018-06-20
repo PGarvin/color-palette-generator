@@ -1,7 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
 
 const main = document.querySelectorAll('.main');
+const recipes = document.getElementById('recipes');
 const button = document.getElementById('generateButton');
+const dropdown = document.getElementById('dropdown');
+let currentNumber = dropdown.value;
+
 
 function randomNumber(x) {
 	return Math.floor(Math.random() * x);
@@ -24,6 +28,7 @@ function rgb2hex(rgb){
 
 
 function palette(x) {
+
 	let colors = [];
 	for (let i=0; i<x; i++) {
 		colors.push(randomColor());
@@ -32,7 +37,21 @@ function palette(x) {
 	for (let j=0; j<main.length; j++) {
 	
 		for (let i=0; i<100; i++) {
-			main[j].innerHTML += '<div class="bars" id="bar'+i+'" style="background:'+colors[i % x]+'"></div>';		
+			let bar = document.createElement('div');
+			bar.setAttribute('class','bars');
+			bar.setAttribute('id','bar'+i);
+			bar.style.background = colors[i % x];
+			main[j].appendChild(bar);		
+		}
+		
+		recipes.innerHTML = '';
+		
+		for (let i=0; i<colors.length; i++) {
+			let colorRecipe = document.createElement('div');
+			let colorRecipeContent = document.createTextNode(colors[i]+' // '+rgb2hex(colors[i]));
+			colorRecipe.style.color = colors[i];
+			colorRecipe.appendChild(colorRecipeContent);
+			recipes.appendChild(colorRecipe);
 		}
 	}
 
@@ -43,11 +62,18 @@ button.addEventListener('click', function() {
 	for (let j=0; j<main.length; j++) {
 		main[j].innerHTML = "";
 	}
-	palette(3);
+	palette(currentNumber);
 });
 
+dropdown.addEventListener('change', function() {
+	currentNumber = dropdown.value;
+	for (let j=0; j<main.length; j++) {
+		main[j].innerHTML = "";
+	}
+	palette(currentNumber);
+});
 
-palette(3);
+palette(currentNumber);
 
 
 
