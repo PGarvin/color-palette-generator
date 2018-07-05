@@ -5,16 +5,25 @@
     text-align: center;
     text-decoration: none;
     font-size: 1em;
-    text-transform: uppercase;
+    text-transform: lowercase;
     font-family: Helvetica, sans-serif;
+    font-weight:bolder;
     width: 100%;
     float:left;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     border: 1px solid #ccc;
+    border-radius: 20px;
     cursor:pointer;
     cursor:hand;
+    background-color:#bbb;
+	color:#fff;
+}
+
+.button:hover {
+	background-color:#fff;
+	color:#bbb;
 }
 
 #recipes {
@@ -38,6 +47,10 @@ select {
     background:#fff;
 }
 
+select:hover {
+	background-color:#eee;
+}
+
 .main {
 	overflow:hidden;
 	width:90%;
@@ -45,23 +58,45 @@ select {
 	margin:3px 5%;
 }
 
-.bars {float:left;}
-.vert .bars {height:100%; width:10px;}
-.horiz .bars {width:100%; height:10px;}
+.bars {
+	float:left;
+}
+
+.vert .bars {
+	height:100%;
+	width:10px;
+}
+
+.horiz .bars {
+	width:100%;
+	height:10px;
+}
 
 
 @media only screen and (min-width: 500px) {
 
 	
-.main {height:200px;}
-.vert .bars {height:100%; width:15px;}
-.horiz .bars {width:100%; height:15px;}
+.main {
+	height:200px;
+}
 
+.vert .bars {
+	height:100%;
+	width:15px;
+}
+
+.horiz .bars {
+	width:100%;
+	height:15px;
+}
 
 }
 
 @media only screen and (min-width: 600px) {
-	.button {width: 60%; margin-left:20%; }
-	
 
+.button {
+	width: 60%;
+	margin-left:20%;
+}
+	
 }
